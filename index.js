@@ -1,3 +1,4 @@
+/*global $ :true*/
 $(function(){
   /**get dom elem */
   var $width = $("#width"),
@@ -10,7 +11,7 @@ $(function(){
   $btnCal.click(clickCalc) 
   $(document).keydown(function(event){
     if(event.keyCode == 13){
-    　clickCalc();
+    clickCalc();
     }
   });
   function clickCalc(){
@@ -46,9 +47,9 @@ function FloatMul(arg1,arg2){
   var m=0; 
   try{
     m+=arg1.toString().split(".")[1].length
-  }catch(e){}
+  }catch(e){console.log(e)}
   try{
     m+=arg2.toString().split(".")[1].length
-  }catch(e){}
+  }catch(e){console.log(e)}
   return Number(arg1.toString().replace(".",""))*Number(arg2.toString().replace(".",""))/Math.pow(10,m);
 }
