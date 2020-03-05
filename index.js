@@ -1,3 +1,4 @@
+/*global $ :true*/
 $(function(){
   /**get dom elem */
   var $width = $("#width"),
@@ -10,7 +11,7 @@ $(function(){
   $btnCal.click(clickCalc) 
   $(document).keydown(function(event){
     if(event.keyCode == 13){
-    　clickCalc();
+    clickCalc();
     }
   });
   function clickCalc(){
@@ -18,13 +19,13 @@ $(function(){
     var w = Number($width .val()),
         h = Number($height.val());
     //calculate
-    // var p = 2*FloatAdd(w,h),
-    //     a = FloatMul(w,h);
+    var p = 2*FloatAdd(w,h),
+        a = FloatMul(w,h);
 
-    var rect = rectangle();
+    // var rect = rectangle();
     // output
-    $perimeter.val(rect.perimeter(w,h));
-    $area.val(rect.area(w,h));
+    $perimeter.val(p);
+    $area.val(a);
   }
 });
 //加法运算精度处理
@@ -48,9 +49,9 @@ function FloatMul(arg1,arg2){
   var m=0; 
   try{
     m+=arg1.toString().split(".")[1].length
-  }catch(e){}
+  }catch(e){console.log(e)}
   try{
     m+=arg2.toString().split(".")[1].length
-  }catch(e){}
+  }catch(e){console.log(e)}
   return Number(arg1.toString().replace(".",""))*Number(arg2.toString().replace(".",""))/Math.pow(10,m);
 }
