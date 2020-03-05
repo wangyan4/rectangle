@@ -30,19 +30,10 @@ module.exports=function(grunt){
       }
     },
     cssmin: {
-      "dist/index.min.css":"index.css"
+      "dist/index.css":"index.css"
     },
     uglify: {
-      "dist/index.min.js":"index.js"
-    },
-    mocha: {
-      test:{
-        src:['index.html']
-      },
-      options:{
-        run:true,
-        reportor:"Dot"
-      }
+      "dist/index.js":"index.js"
     }
   });
 
@@ -55,7 +46,6 @@ module.exports=function(grunt){
   grunt.loadNpmTasks("grunt-mocha");
 
   grunt.registerTask("lint",['htmlhint','csslint','eslint']);
-  grunt.registerTask('util',['mocha'])
   grunt.registerTask("default",['htmlmin','cssmin','uglify']);
 };
 
