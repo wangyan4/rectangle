@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "grunt lint && grunt util"
+    "test": "grunt lint && grunt util && exit 0"
   },
   "repository": {
     "type": "git",
