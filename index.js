@@ -99,7 +99,7 @@ $(function () {
     // get DOM
     var $data = $(filed),
       $text = filed.substring(1),
-      $msg = $(`${filed}-validation-message`);
+      $msg = $(filed+"-validation-message");
     // validata null
     if ($data.val() === '') {
       if ($text == 'width') {
