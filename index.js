@@ -1,4 +1,5 @@
 /*global $ :true*/
+/*eslint no-useless-escape: "error"*/
 $(function () {
   /**get dom elem */
   var $width = $("#width"),
@@ -33,7 +34,7 @@ $(function () {
     // output
     $perimeter.val(p);
     $area.val(a);
-  };
+  }
   $btnRet.click(function () {
     $width.focus();
     $width.val('');
@@ -48,7 +49,7 @@ $(function () {
   // 2.event argument get key value e.keyboard-confirm
   // 3.e.preventDefault()
   $width.keypress(function (e) {
-    if (/[abcdf-zABCDF-Z`~!@#$%^&*()\=_+[\]{}|;:'",<>/?\\]/.test(e.key)) {
+    if (/[abcdf-zABCDF-Z`~!@#$%^&*()=_+[\]{}|;:'",<>/?\\]/.test(e.key)) {
       e.preventDefault();
       return;
     }
